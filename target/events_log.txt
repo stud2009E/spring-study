@@ -1,0 +1,7 @@
+
+Event{id=35, msg='Some event for user John Smith', date=1 июн. 2023 г., 11:58:29}
+Event{id=81, msg='Some event for user 4', date=1 июн. 2023 г., 11:58:29}
+Event{id=38, msg='Some event for user John Smith', date=1 июн. 2023 г., 13:08:44}
+Event{id=72, msg='Some event for user 4', date=1 июн. 2023 г., 13:08:44}
+Event{id=54, msg='Some event for user John Smith', date=1 июн. 2023 г., 15:59:17}
+Event{id=13, msg='Some event for user 4', date=1 июн. 2023 г., 15:59:17}
