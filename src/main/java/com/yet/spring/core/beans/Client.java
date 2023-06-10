@@ -1,26 +1,32 @@
 package com.yet.spring.core.beans;
 
 public class Client {
-    private final String id;
-    private final String fullName;
-
+    private String id;
+    private String fullName;
     private String greeting;
 
-    public Client(String id, String fullName){
-        super();
+
+    public void setId(String id) {
         this.id = id;
-        this.fullName = fullName;
     }
 
-    public void setGreeting(String greeting){
-        this.greeting = greeting;
+    public String getId() {
+        return id;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getFullName() {
         return fullName;
     }
 
-    public String getId() {
-        return id;
+    public void setGreeting(String greeting){
+        this.greeting = greeting;
+    }
+
+    public String getGreeting(){
+        return greeting;
     }
 }

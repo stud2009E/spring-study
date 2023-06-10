@@ -1,4 +1,4 @@
-package com.yet.spring.core.loggers;
+package com.yet.spring.core.beans;
 
 public enum EventType {
     INFO,

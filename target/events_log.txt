@@ -5,3 +5,13 @@ Event{id=38, msg='Some event for user John Smith', date=1 июн. 2023 г., 13:0
 Event{id=72, msg='Some event for user 4', date=1 июн. 2023 г., 13:08:44}
 Event{id=54, msg='Some event for user John Smith', date=1 июн. 2023 г., 15:59:17}
 Event{id=13, msg='Some event for user 4', date=1 июн. 2023 г., 15:59:17}
+Event{id=0, msg='Some event for user John Smith', date=10 июн. 2023 г., 17:19:32}
+Event{id=3, msg='Some event for user 4', date=10 июн. 2023 г., 17:19:32}
+Event{id=0, msg='Some event for user John Smith', date=10 июн. 2023 г., 17:21:47}
+Event{id=3, msg='Some event for user 4', date=10 июн. 2023 г., 17:21:47}
+Event{id=0, msg='Some event for user John Smith', date=10 июн. 2023 г., 17:22:11}
+Event{id=3, msg='Some event for user 4', date=10 июн. 2023 г., 17:22:11}
+Event{id=0, msg='Some event for user John Smith', date=10 июн. 2023 г., 17:22:26}
+Event{id=3, msg='Some event for user 4', date=10 июн. 2023 г., 17:22:26}
+Event{id=0, msg='Some event for user John Smith', date=10 июн. 2023 г., 17:22:57}
+Event{id=3, msg='Some event for user 4', date=10 июн. 2023 г., 17:22:57}

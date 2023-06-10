@@ -1,22 +1,31 @@
 package com.yet.spring.core.loggers;
 
-import java.io.IOException;
+import com.yet.spring.core.beans.Event;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class CacheFileEventLogger extends FileEventLogger{
 
-    private final int cacheSize;
-    private final List<Event> cache = new ArrayList<>();
+    @Value("${cache.size:5}")
+    private int cacheSize;
+    private List<Event> cache;
 
-    public CacheFileEventLogger(String fileName, int cacheSize) throws IOException {
+    public CacheFileEventLogger(){}
+
+    public CacheFileEventLogger(String fileName, int cacheSize) {
         super(fileName);
-
         this.cacheSize = cacheSize;
     }
 
-    private void writeEventsFromCache(){
-        cache.forEach(super::logEvent);
+    @PostConstruct
+    public void initCache(){
+        cache = new ArrayList<Event>(cacheSize);
     }
 
     @Override
@@ -29,9 +38,20 @@ public class CacheFileEventLogger extends FileEventLogger{
         }
     }
 
+    @PreDestroy
     public void destroy() {
         if (!cache.isEmpty()){
             writeEventsFromCache();
         }
+    }
+
+    private void writeEventsFromCache(){
+        cache.forEach(super::logEvent);
+    }
+
+    @Value("#{fileEventLogger.name + ' with cache'}")
+    @Override
+    public void setName(String name) {
+        this.name = name;
     }
 }

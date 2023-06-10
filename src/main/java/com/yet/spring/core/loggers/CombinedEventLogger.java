@@ -1,17 +1,31 @@
 package com.yet.spring.core.loggers;
 
-import java.util.List;
+import com.yet.spring.core.beans.Event;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
-public class CombinedEventLogger implements EventLogger{
+import javax.annotation.Resource;
+import java.util.Collection;
+import java.util.Collections;
 
-    private List<EventLogger> loggers;
+@Component
+public class CombinedEventLogger extends AbstractLogger{
 
-    public CombinedEventLogger(List<EventLogger> loggers){
-        this.loggers = loggers;
-    }
+    @Resource(name = "combinedLoggers")
+    private Collection<EventLogger> loggers;
 
     @Override
     public void logEvent(Event event) {
         loggers.forEach(logger -> logger.logEvent(event));
+    }
+
+    public Collection<EventLogger> getLoggers(){
+        return Collections.unmodifiableCollection(loggers);
+    }
+
+    @Value("#{'Combined ' + combinedLoggers.![name].toString()}")
+    @Override
+    public void setName(String name) {
+        this.name = name;
     }
 }
