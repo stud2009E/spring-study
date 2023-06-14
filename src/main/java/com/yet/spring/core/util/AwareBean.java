@@ -6,7 +6,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
+import org.springframework.stereotype.Component;
 
+@Component
 public class AwareBean implements ApplicationContextAware, BeanNameAware, ApplicationEventPublisherAware {
     private ApplicationContext ctx;
     private String name;
